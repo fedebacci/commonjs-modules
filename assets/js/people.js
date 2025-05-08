@@ -27,18 +27,28 @@ const { getHobbies } = require('./hobbies.js');
 
 const init = () => {
 
-    // const person = {
-    //     fullName: getFullName(),
-    //     hobbies: getHobbies()
-    // }
+    // * CON VALORI DI DEFAULT (AVENDO USATO REST OPERATOR PER GLI HOBBIES NON POSSONO PIU AVERE VALORE DI DEFAULT, QUINDI OTTENGO ARRAY VUOTO)
     const person = {
-        fullName: getFullName(process.argv[2], process.argv[3]),
-        hobbies: getHobbies(process.argv[4], process.argv[5], process.argv[6])
+        fullName: getFullName(),
+        hobbies: getHobbies()
     }
 
-    console.log(person)
+    // * CON VALORI RICEVUTI DA COMANDO NEL TERMINAL (ESEMPIO SOTTO)
+    // * node people.js "John" "Doe" "Reading" "Playing Basketball" "Hobby 3" undefined  "Eating"
+    // const person = {
+    //     fullName: getFullName(process.argv[2], process.argv[3]),
+    //     hobbies: getHobbies(process.argv[4], process.argv[5], process.argv[6])
+    // };
+
+    // * CON VALORI HARD-CODED PASSATI COME PARAMETRI DELLA FUNZIONE
+    // const person = {
+    //     fullName: getFullName("John", "Doe"),
+    //     hobbies: getHobbies("Painting", "Reading", "Playing Basketball", undefined, "Eating")
+    // };
+
+    console.log(person);
 
     return person;
-}
+};
 
 init();
